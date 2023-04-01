@@ -273,6 +273,8 @@ h4{
   background-color:#201F20 ;
   color: #D9D9D9;
 }
+
+
 .wrapper{
   position: relative;
   display: flex;
@@ -280,9 +282,7 @@ h4{
   align-items: center;
 }
 .login{
-  margin: 50px 0;
-  width: 500px;
-  height:540px;
+  margin: 2em 5%;
   background-color: #A9CEC2;
   border-radius: 10px;
   min-width: 300px;
@@ -292,10 +292,9 @@ h4{
 }
 .form-content h2{
   display: flex;
-  font-size: 36px;
-  font-weight: 700;
-  line-height: 44px;
+  font-size: 2.5rem;
   justify-content: center;
+  margin-bottom: 1em;
 }
 .form-content form .details{
   display: flex;
@@ -305,11 +304,9 @@ h4{
   color: #000000;
 }
 .user-details .details{
-  padding-left: 15px;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
-  margin: 20px 0 25px 0;
+  padding-left: 1em;
+  font-size: 1.5rem;
+  margin: 1em 0;
 }
 .user-details input{
   padding-left: 10px;
@@ -323,7 +320,6 @@ h4{
 .form-link{
   margin: 30px 0;
   font-size: 16px;
-  font-weight: 700;
   line-height: 19px;
 }
 .form-link .remember-pass{
@@ -333,33 +329,29 @@ h4{
   gap:0 10px;
 }
 .form-link .checkbox{
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border-radius: 3px;
   border: 1px solid #ffffff;
 }
 .button-field button{
   width: 100%;
-  height: 51px;
+  height: 2.3em;
   background: #3C35A5;
   border-radius: 10px;
-  border: 1px solid #3C35A5;
   cursor: pointer;
-}
-.button-field button {
   font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 29px;
-  color: #FFFFFF;
+  font-size: 1.5rem;
+  color: var(--text-color);
 }
 .form-link .create-now{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: .7em;
 }
 .form-link .create-now h3 , .remember-pass h3{
   color: #000000;
+  font-weight: normal;
 }
 .form-link .create-now a{
   color: #3C35A5;

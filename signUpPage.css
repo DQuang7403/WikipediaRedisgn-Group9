@@ -284,20 +284,20 @@ h4{
   align-items: center;
 }
 .signup{
-  margin: 50px 0;
-  width: clamp(400px, 40vw, 600px);
+  margin: 2em 5%;
   background-color: #A9CEC2;
   border-radius: 10px;
-  min-width: 300px;
 }
 .form-content {
   padding: 30px 60px;
+  width: clamp(300px, 10vw 500px);
 }
 .form-content h2{
   display: flex;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
   justify-content: center;
+  margin-bottom: 1em;
 }
 .form-content form .details{
   display: flex;
@@ -307,11 +307,9 @@ h4{
   color: #000000;
 }
 .user-details .details{
-  padding-left: .9em;
-  font-weight: bold;
+  padding-left: 1em;
   font-size: 1.3rem;
-  line-height: 24px;
-  margin: 20px 0 25px 0;
+  margin: 1em 0;
 }
 .emailDetail{
   font-size: 1.1rem;
@@ -329,12 +327,13 @@ h4{
 .button-field button{
   width: 100%;
   padding: .5em 0;
+  height: 2.3em;
   background-color: #3C35A5;
   border-radius: 10px;
   cursor: pointer;
-  font-weight: bold;
   font-size: 1.3rem;
   color: var(--text-color);
+  margin: .5em 0;
 }
 
 
