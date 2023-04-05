@@ -181,6 +181,25 @@ input{
 .mainIcon{
   height: 50px;
 }
+.Btn{
+  background-color: #53555A;
+  padding: .5em 1.5em;
+  border-radius: 12px;
+  font-weight: bold;
+  color: var(--text-color);
+  cursor: pointer;
+}
+.Btn:hover{
+  background-color: #707277;
+}
+.selected:hover{
+  background-color: #201F20;
+}
+.selected{
+  cursor: default;
+  background-color:#201F20 ;
+  color: #D9D9D9;
+}
 
 .btn{
   padding: .4em 1em;
@@ -244,36 +263,6 @@ h4{
   color: var(--text-color);
 }
 
-.buttons{
-  margin: 1em 10%;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.Btn{
-  background-color: #53555A;
-  padding: .5em 1.5em;
-  border-radius: 12px;
-  font-weight: bold;
-  color: var(--text-color);
-  cursor: pointer;
-}
-.Btn:hover{
-  background-color: #707277;
-}
-.rightBtns,.leftBtns{
-  display: flex;
-  gap: 1.5em ;
-}
-.selected:hover{
-  background-color: #201F20;
-}
-.selected{
-  cursor: default;
-  background-color:#201F20 ;
-  color: #D9D9D9;
-}
 
 
 
@@ -290,7 +279,7 @@ h4{
 }
 .form-content {
   padding: 30px 60px;
-  width: clamp(300px, 10vw 500px);
+  width: clamp(420px, 35vw, 500px);
 }
 .form-content h2{
   display: flex;
@@ -324,7 +313,7 @@ h4{
   border-radius: 12px;
   background: #DEDEDE;
 }
-.button-field button{
+.button-field input{
   width: 100%;
   padding: .5em 0;
   height: 2.3em;
