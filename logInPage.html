@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="logInPage.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="index.js" defer></script>
+  <script type="module" src="index.js" defer></script>
   <title>Log in - Wikipedia</title>
 
 </head>
@@ -98,12 +98,12 @@
           
           <div class="user-details">
             <div class="input-field">
-              <h3 class="details">Username</h3>
-              <input type="text" class="login-username">
+              <h3 class="details">Gmail</h3>
+              <input type="email" class="Gmail" id="Gmail">
             </div>
             <div class="input-field">
               <h3 class="details">Password</h3>
-              <input type="password" class="login-password">
+              <input type="password" class="login-password" id="login-password">
             </div>
           </div>
 
@@ -115,7 +115,7 @@
           </div>
 
           <div class="field button-field">
-            <input type="submit" value="Log in">
+            <input value="Log in" id="logIn">
           </div>
 
           <div class="form-link">

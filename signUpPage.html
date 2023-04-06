@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="signUpPage.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="index.js" defer></script>
   <title>Create account - Wikipedia</title>
 </head>
 <body>
@@ -90,6 +89,7 @@
     
     
   </section>
+
   <section class="wrapper">
   <div class="signup">
     <div class="form-content">
@@ -98,12 +98,12 @@
         <div class="user-details">
           <div class="input-field">
             <h3 class="details">Username</h3>
-            <input type="text" class="signup-username">
+            <input type="text" class="signup-username" id="signupusername">
           </div>
 
           <div class="input-field">
             <h3 class="details">Password</h3>
-            <input type="password" class="signup-password">
+            <input type="password" class="signup-password" id="signuppassword">
           </div>
 
           <div class="input-field">
@@ -113,13 +113,13 @@
 
           <div class="input-field">
             <h3 class="details">Email address (recommended)</h3>
-            <input type="email" class="email-address">
+            <input type="email" class="email-address" id="email">
             <p class="emailDetail">Email is required to recover your account if you lose your password.</p>
           </div>
         </div>
 
         <div class="field button-field">
-          <input type="submit" value="Create your account">
+          <input value="Create your account" id="signUp">
         </div>
 
 
@@ -142,5 +142,71 @@
       <img src="images/footerImg2.png" alt="" srcset="">
     </div>
   </footer>
+
+  <script type="module" defer>
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+import {getDatabase, set, ref} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyB2auruNiFgCJ5avDlZbP8WtcolXYNSWKw",
+  authDomain: "wikipediaredesign9.firebaseapp.com",
+  databaseURL: "https://wikipediaredesign9-default-rtdb.firebaseio.com",
+  projectId: "wikipediaredesign9",
+  storageBucket: "wikipediaredesign9.appspot.com",
+  messagingSenderId: "841997889837",
+  appId: "1:841997889837:web:10f26e5db050a30bfce3a4"
+};
+
+const app = initializeApp(firebaseConfig);
+const dataBase = getDatabase(app);
+const auth = getAuth();
+const signUp = document.getElementById("signUp");
+signUp.addEventListener('click', (e)=>{
+  let userName = document.getElementById("signupusername").value;
+  let email = document.getElementById('email').value;
+  let password = document.getElementById('signuppassword').value;
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in 
+      const user = userCredential.user;
+      set(ref(dataBase, 'user/' + user.uid),{
+        userName : userName,
+        email : email,
+      })
+      // ...
+      alert("You have created an account successfully")
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // ..
+      alert(errorMessage)
+    });
+})
+const mobileNav = document.getElementsByClassName("mobileNav")[0];
+const humbergerMenu = document.getElementsByClassName("humbergerMenu")[0];
+humbergerMenu.addEventListener("click", () =>{
+  mobileNav.classList.toggle("active");
+})
+const userBtn = document.getElementsByClassName("userIcon");
+for(let i = 0; i < userBtn.length; i++){
+  userBtn[i].addEventListener('click',()=>{
+  const content = document.getElementsByClassName("userInformations")[i];
+  if(content.style.display == 'none'){
+    content.style.display = 'flex';
+  }else{
+    content.style.display = "none"
+  }
+  
+  })
+}
+  </script>
 </body>
 </html>

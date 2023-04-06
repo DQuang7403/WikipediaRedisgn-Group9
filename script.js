@@ -1,4 +1,16 @@
-// On this day animation
+let ourRequest = new XMLHttpRequest();
+ourRequest.open("GET", `https://wikipediaredesign9-default-rtdb.firebaseio.com/user/
+VhQTaJAwEXg2EkhtEgQijis7kk23.json`);
+ourRequest.send();
+ourRequest.onload = function(){
+let ourData = JSON.parse(ourRequest.responseText)
+console.log(ourData.userName)
+for(let i = 0; i < 2; i++){
+  document.getElementsByClassName("name")[i].innerHTML = ourData.userName;
+  document.getElementsByClassName("email")[i].innerHTML = ourData.email;  
+}
+
+}// On  this day animation
 const buttons = document.getElementsByClassName("visibleEvent");
 const popUpInfo = document.getElementsByClassName("eventInfo");
 const arrows = document.getElementsByClassName("arrow");
@@ -53,6 +65,7 @@ const humbergerMenu = document.getElementsByClassName("humbergerMenu")[0];
 humbergerMenu.addEventListener("click", () =>{
   mobileNav.classList.toggle("active");
 })
+
 const userBtn = document.getElementsByClassName("userIcon");
 for(let i = 0; i < userBtn.length; i++){
   userBtn[i].addEventListener('click',()=>{
@@ -65,4 +78,5 @@ for(let i = 0; i < userBtn.length; i++){
   
   })
 }
+
 
